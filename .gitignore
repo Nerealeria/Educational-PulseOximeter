@@ -1,0 +1,29 @@
+# macOS
+.DS_Store
+
+# Flutter / Dart
+Flutter_App/**/.dart_tool/
+Flutter_App/**/build/
+Flutter_App/**/.idea/
+Flutter_App/**/.vscode/
+Flutter_App/**/.flutter-plugins
+Flutter_App/**/.flutter-plugins-dependencies
+
+# Android / Gradle (Flutter)
+Flutter_App/**/android/.gradle/
+Flutter_App/**/android/local.properties
+Flutter_App/**/local.properties
+
+# IntelliJ / Android Studio
+**/*.iml
+
+# iOS (Flutter)
+Flutter_App/**/ios/Pods/
+Flutter_App/**/ios/.symlinks/
+Flutter_App/**/ios/Flutter/Flutter.framework
+Flutter_App/**/ios/Flutter/Flutter.podspec
+
+# (Optional) key stores - never commit
+**/*.jks
+**/*.keystore
+
