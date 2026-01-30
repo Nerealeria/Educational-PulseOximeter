@@ -1,17 +1,27 @@
 import 'package:flutter/material.dart';
 import 'ble_controller.dart';
-
-class PPGvaluesPage extends StatelessWidget{
+import 'welcome_screen.dart';
+class PPGvaluesPage extends StatefulWidget {
   final BleController ble;
+
   const PPGvaluesPage({super.key, required this.ble});
 
   @override
+  State<PPGvaluesPage> createState() => PPGvaluesPageState();
+}
+
+  class PPGvaluesPageState extends State<PPGvaluesPage>{
+  @override
   Widget build(BuildContext context){
+    final ble = widget.ble;
     return Scaffold(
       appBar: AppBar(title: const Text("Live Measurement"), actions:[
         IconButton(icon: const Icon(Icons.logout), onPressed: () async{
           await ble.disconnect();
-          Navigator.pop(context); // Closes current screen and goes back to the previous one
+          if(!mounted) return;
+
+          Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (_)
+          => WelcomePage(ble: ble),), (route)=>false,);// Closes current screen and goes back to the previous one
         },
         ),
       ],
